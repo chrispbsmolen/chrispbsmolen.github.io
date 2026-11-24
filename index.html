@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christopher Smolen · Covering Array Table, verified research data and software</title>
+<meta name="description" content="Christopher Smolen maintains the Covering Array Table of best known covering arrays, holds 85 records in it, and finds and fixes errors in published research tables and software, proving each fix exactly.">
+<link rel="canonical" href="https://chrispbsmolen.github.io/">
+<meta property="og:title" content="Christopher Smolen, Covering Array Table">
+<meta property="og:description" content="Best known covering arrays with checked arrays, exact checkers and open editions of research tables.">
+<meta property="og:url" content="https://chrispbsmolen.github.io/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Christopher Smolen","alternateName":"Christopher P. B. Smolen","url":"https://chrispbsmolen.github.io/","sameAs":["https://orcid.org/0009-0002-9537-7961","https://github.com/chrispbsmolen","https://chrispbsmolen.github.io/ca-tools/"],"knowsAbout":["covering arrays","combinatorial testing","combinatorial design","enumerative combinatorics"]}</script>
+<style>
+:root{--ink:#16181d;--muted:#5b616e;--rule:#d9dce2;--accent:#1f5fbf;--bg:#fbfbfa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "Iowan Old Style","Palatino Linotype",Georgia,serif}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:880px;margin:0 auto;padding:64px 32px 80px}
+header{display:grid;grid-template-columns:1fr auto;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:20px}
+h1{font:600 44px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:-.02em;margin:0}
+.tag{font:15px/1.4 "Helvetica Neue",Arial,sans-serif;color:var(--muted);margin:10px 0 0}
+.ids{font:14px/1.7 "Helvetica Neue",Arial,sans-serif;text-align:right}
+.lead{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--rule)}
+.lead h2{font:600 26px/1.15 "Helvetica Neue",Arial,sans-serif;margin:0 0 12px}
+.lead p{margin:0 0 14px}
+.stats{display:grid;grid-template-columns:1fr;gap:0;border-left:1px solid var(--rule);padding-left:28px}
+.stat{padding:10px 0;border-bottom:1px solid var(--rule)}
+.stat:last-child{border-bottom:0}
+.num{font:600 34px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:-.01em}
+.lab{font:13px/1.35 "Helvetica Neue",Arial,sans-serif;color:var(--muted);margin-top:4px}
+.btns{font:14px "Helvetica Neue",Arial,sans-serif;display:flex;gap:18px;flex-wrap:wrap}
+section{padding:30px 0 6px;border-bottom:1px solid var(--rule)}
+section h3{font:600 13px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+.item{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:0 0 18px}
+.item b{font:600 16px/1.35 "Helvetica Neue",Arial,sans-serif;display:block}
+.item .where{font:13px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--muted)}
+.item p{margin:0}
+footer{font:13px/1.6 "Helvetica Neue",Arial,sans-serif;color:var(--muted);padding-top:24px}
+@media (max-width:720px){header,.lead,.item{grid-template-columns:1fr}.ids{text-align:left;margin-top:14px}.stats{border-left:0;padding-left:0}}
+.band{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.band>div{padding:24px 18px 22px 0}
+.band>div+div{padding-left:18px;border-left:1px solid var(--rule)}
+.band .lab{margin-top:8px}
+.item .imp{margin:0}
+.item .res{font:13px/1.5 "Helvetica Neue",Arial,sans-serif;color:var(--muted);margin-top:4px}
+@media (max-width:720px){.band{grid-template-columns:1fr 1fr}.band>div+div{border-left:0;padding-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div>
+<h1>Christopher Smolen</h1>
+<p class="tag">I find the gaps and errors in research tables and software, fix them, and prove the fix exactly · Omaha, Nebraska</p>
+</div>
+<div class="ids">
+<a href="https://orcid.org/0009-0002-9537-7961">ORCID 0009-0002-9537-7961</a><br>
+<a href="https://github.com/chrispbsmolen">github.com/chrispbsmolen</a><br>
+<a href="mailto:chrispbsmolen@gmail.com">chrispbsmolen@gmail.com</a>
+</div>
+</header>
+
+<div class="band">
+<div><div class="num">85</div><div class="lab">covering array records held, 82 of them below the November 2024 tables</div></div>
+<div><div class="num">3,650</div><div class="lab">spherical codes improved and certified for Henry Cohn's table</div></div>
+<div><div class="num">6</div><div class="lab">R packages I maintain on CRAN and Bioconductor</div></div>
+<div><div class="num">10</div><div class="lab">OEIS entries that credit my work</div></div>
+</div>
+
+<div class="lead">
+<div>
+<h2>The Covering Array Table</h2>
+<p>The covering array tables maintained by Charles Colbourn list the best known sizes and point to the construction behind each, but do not include the arrays themselves, so the arrays could not be downloaded and checked directly.</p>
+<p>I built and maintain the open table that starts from that state and adds the arrays submitted and checked since, along with published bounds from the literature, for strengths 2 to 6, alphabets up to 25 symbols and up to 100,000 columns. Every entry names its source, and 1,045 arrays are on file so anyone can download and check them.</p>
+<p>The R package CAs on CRAN loads the table at start-up, and its contributing guide sends new arrays here.</p>
+<div class="btns">
+<a href="https://chrispbsmolen.github.io/ca-tools/">Open the table</a>
+<a href="https://github.com/chrispbsmolen/ca-tools">Repository</a>
+<a href="https://doi.org/10.5281/zenodo.24168008">doi:10.5281/zenodo.24168008</a>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">15,856</div><div class="lab">entries, each with its source</div></div>
+<div class="stat"><div class="num">1,045</div><div class="lab">arrays on file, each checked and downloadable</div></div>
+<div class="stat"><div class="num">2,424</div><div class="lab">parameter sets where the table now gives a smaller size than the November 2024 tables, from all contributors</div></div>
+</div>
+</div>
+
+<section>
+<h3>New results, checked exactly</h3>
+<div class="item"><div><b>Cyclic covering perfect hash families</b><span class="where">Report, Zenodo</span></div><div><p class="imp">Nine covering arrays of strength five and six smaller than the best sizes previously recorded, and a tenth by fusing a symbol. Two checkers, written separately, check each of the nine exactly, up to 1.23 × 10<sup>14</sup> column sets for one family.</p><div class="res"><a href="https://doi.org/10.5281/zenodo.23751687">doi:10.5281/zenodo.23751687</a></div></div></div>
+
+<div class="item"><div><b>Spherical codes</b><span class="where">Henry Cohn's table</span></div><div><p class="imp">The table at spherical-codes.org flagged 4,252 codes as needing more optimization. I improved 3,650 of them and certified every one exactly. The site credits me on the entries where my codes are still the best known.</p><div class="res"><a href="https://github.com/chrispbsmolen/spherecert">spherecert</a> · <a href="https://doi.org/10.5281/zenodo.24299107">doi:10.5281/zenodo.24299107</a> · <a href="https://spherical-codes.org/">spherical-codes.org</a></div></div></div>
+
+<div class="item"><div><b>Total domination of the grid</b><span class="where">Preprint, Zenodo</span></div><div><p class="imp">The growth constant of total dominating sets of the square grid, computed to fourteen stable digits, with new terms a(31) to a(38) of OEIS A133793 and checkers that share no code with the computation.</p><div class="res"><a href="https://doi.org/10.5281/zenodo.24270132">doi:10.5281/zenodo.24270132</a></div></div></div>
+
+<div class="item"><div><b>Almost cubic maps</b><span class="where">OEIS extensions</span></div><div><p class="imp">Answered the September 2026 request for extensions of A002006 to A002010 on SeqFan, with three computations that agree (two from the paper's recurrence, one a direct count of small maps), closed formulas and b-files to n = 200. All five entries now credit the work, along with A398746 to A398748 (author), A133793 and A290382.</p><div class="res"><a href="https://github.com/chrispbsmolen/almost-cubic-maps">Repository</a> · <a href="https://oeis.org/A002006">A002006</a></div></div></div>
+
+</section>
+
+<section>
+<h3>Checking other people's published tables</h3>
+<div class="item"><div><b>Fast matrix multiplication</b><span class="where">Alexandre Sedoglavic's catalogue</span></div><div><p class="imp">An exact checker run on every scheme in the catalogue, and a checker for its new JSON format.</p><div class="res"><a href="https://github.com/chrispbsmolen/fmmcheck">fmmcheck</a> · <a href="https://github.com/chrispbsmolen/fmmjson">fmmjson</a></div></div></div>
+
+<div class="item"><div><b>Small Ramsey numbers</b><span class="where">Radziszowski's dynamic survey</span></div><div><p class="imp">An exact checker for lower-bound witnesses, run on the public witness files, with a table of every lower bound in the survey and whether a public witness for it has been checked.</p><div class="res"><a href="https://github.com/chrispbsmolen/ramsey-witnesses">ramsey-witnesses</a></div></div></div>
+
+<div class="item"><div><b>Covering codes</b><span class="where">Gerzson Kéri's tables</span></div><div><p class="imp">Explicit codes for some of the upper bounds in the tables, and an exact checker that visits every word of the space, by either of two different methods.</p><div class="res"><a href="https://github.com/chrispbsmolen/covering-codes">covering-codes</a></div></div></div>
+
+</section>
+
+<section>
+<h3>Research data made usable</h3>
+<div class="item"><div><b>Henry's law constants</b><span class="where">Rolf Sander's compilation</span></div><div><p class="imp">All 46,434 values for 10,173 species converted from the published SQL file with no hand edits, checked against the paper's own listings, and released as CSV, Parquet and SQLite with an errata layer.</p><div class="res"><a href="https://github.com/chrispbsmolen/henrys-law-constants">Repository</a> · <a href="https://doi.org/10.5281/zenodo.24091877">doi:10.5281/zenodo.24091877</a></div></div></div>
+
+<div class="item"><div><b>Mortality from smoking</b><span class="where">Peto, Lopez et al.</span></div><div><p class="imp">The numeric tables of the 2006 and 2015 editions, converted from the authors' 97 PDFs, with every number traced to its PDF and page.</p><div class="res"><a href="https://chrispbsmolen.github.io/smoking-mortality-tables/">Browse</a> · <a href="https://doi.org/10.5281/zenodo.24055042">doi:10.5281/zenodo.24055042</a></div></div></div>
+
+</section>
+
+<section>
+<h3>Software kept alive</h3>
+<div class="item"><div><b>caverify and cafast</b><span class="where">CRAN, maintainer</span></div><div><p class="imp">The CAs package checks coverage in R. caverify checks arrays in compiled code, much faster in the words of the CAs documentation, and CAs now imports it. cafast adds compiled versions of selected CAs functions.</p><div class="res"><a href="https://cran.r-project.org/package=caverify">caverify</a> · <a href="https://cran.r-project.org/package=cafast">cafast</a></div></div></div>
+
+<div class="item"><div><b>ELMER and ELMER.data</b><span class="where">Bioconductor, maintainer</span></div><div><p class="imp">Bioconductor had deprecated both packages because their maintainer was unresponsive, and ELMER's vignettes no longer built. I fixed both to a clean check and took over as maintainer, keeping every original author.</p><div class="res"><a href="https://bioconductor.org/packages/devel/bioc/html/ELMER.html">ELMER</a> · <a href="https://bioconductor.org/packages/devel/data/experiment/html/ELMER.data.html">ELMER.data</a></div></div></div>
+
+<div class="item"><div><b>GOfuncR</b><span class="where">Bioconductor, maintainer</span></div><div><p class="imp">Took over as maintainer and fixed its build.</p><div class="res"><a href="https://bioconductor.org/packages/devel/bioc/html/GOfuncR.html">GOfuncR</a></div></div></div>
+
+<div class="item"><div><b>ghql</b><span class="where">rOpenSci, maintainer</span></div><div><p class="imp">Took over maintenance of the rOpenSci GraphQL client; version 0.1.3 is on CRAN.</p><div class="res"><a href="https://cran.r-project.org/package=ghql">ghql</a></div></div></div>
+
+<div class="item"><div><b>tsDyn</b><span class="where">CRAN, contributor</span></div><div><p class="imp">CRAN had archived tsDyn for failing checks. I contributed one of the two fixes in the release that brought it back, making its saved test output give the same result under different numerical libraries. The package NEWS credits it.</p><div class="res"><a href="https://github.com/MatthieuStigler/tsDyn/blob/master/NEWS.md">tsDyn NEWS</a></div></div></div>
+
+<div class="item"><div><b>LaTeXML</b><span class="where">Pull request</span></div><div><p class="imp">A binding for the arydshln package (dashed table lines) for LaTeXML, which arXiv credits for making its HTML papers possible. On one arXiv paper it takes conversion errors from 37 to none.</p><div class="res"><a href="https://github.com/brucemiller/LaTeXML/pull/2889">Pull request #2889</a></div></div></div>
+
+</section>
+
+<footer>Updated November 2026.</footer>
+</div>
+</body>
+</html>
